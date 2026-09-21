@@ -170,7 +170,7 @@ function renderOverview() {
       <div class="summary red"><div class="bubble">↗</div><strong>${esc(compactTotals(owed))}</strong><small>Я должен</small></div>
     </div></section>
     <section class="section"><div class="section-head"><h2>Копилка</h2><button class="text-button" id="edit-savings">Изменить</button></div><div class="savings-card">
-      <div class="pig-mark" aria-hidden="true">●</div>
+      <img class="pig-image" src="icons/piggy-inline.png" alt="" aria-hidden="true">
       <div class="savings-values">${savings.length ? savings.map(item => `<div class="saving-line"><div><strong>${money(item.total, item.currency)}</strong><small>${item.fromMonths >= 0 ? "+" : "−"}${money(Math.abs(item.fromMonths), item.currency)} из закрытых месяцев</small></div><b>${item.currency}</b></div>`).join("") : `<div><strong>Копилка пуста</strong><small>Укажите сумму, которая уже накоплена</small></div>`}</div>
     </div><p class="caption">Остаток закрытого месяца добавляется автоматически: поступления минус оплаченные расходы.</p></section>
     <section class="section"><div class="section-head"><h2>Текущий месяц</h2><span>${monthLabel(current)}</span></div><div class="card card-pad">${metricsHtml(monthStats(current))}</div></section>
